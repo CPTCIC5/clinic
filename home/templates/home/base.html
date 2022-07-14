@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+<meta charset="utf-8">
+<title>Paediatricare | {% block title %} {% endblock title %}</title>
+
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'plugins/revolution/css/settings.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'plugins/revolution/css/layers.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'plugins/revolution/css/navigation.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+<link id="theme-color-file" href="{% static 'css/color-themes/default-theme.css' %}" rel="stylesheet">
+<link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+</head>
+<body>
+<div class="page-wrapper">
+
+<div class="preloader"></div>
+
+<section id="home">
+<header class="main-header header-style-four">
+
+<div class="header-top">
+<div class="auto-container">
+<div class="inner-container">
+<div class="top-left">
+<ul class="contact-list clearfix">
+<li><i class="flaticon-back-in-time"></i>Open 24 x 7 </li>
+<li><i class="flaticon-call-1"></i>+91 00000 00000</li>
+</ul>
+</div>
+<div class="top-right">
+<ul class="social-icon-one">
+<li><a href="https://www.facebook.com/"><span class="fab fa-facebook-f"></span></a></li>
+<li><a href="#"><span class="fab fa-youtube"></span></a></li>
+<li><a href="tel:+91000000000"><span class="fab fa-whatsapp"></span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="header-lower">
+<div class="auto-container">
+
+<div class="main-box">
+<div class="logo-box">
+<div class="logo"><a href="index-2.html"><h1>Paediatricare</h1></a></div>
+</div>
+
+<div class="nav-outer">
+<nav class="nav main-menu">
+<ul class="navigation" id="navbar">
+<li class="current"><a href="index-2.html#home">Home</a></li>
+<li><a href="index-2.html#about">About</a></li>
+<li><a href="index-2.html#services">Services</a></li>
+<li><a href="index-2.html#doctors">Doctors</a></li>
+<li><a href="blog.html">Blogs</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="outer-box">
+<a href="#appointment" class="theme-btn btn-style-one"><span class="btn-title">Appointment</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="sticky-header">
+<div class="auto-container">
+<div class="main-box">
+<div class="logo-box">
+<div class="logo"><a href="index-2.html"><img src="images/logo.png" alt="" title=""></a></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="mobile-header">
+<div class="logo"><a href="index-2.html"><img src="images/logo.png" alt="" title=""></a></div>
+
+<div class="nav-outer clearfix">
+<div class="outer-box">
+
+<a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span class="fa fa-bars"></span></a>
+</div>
+</div>
+</div>
+
+<div id="nav-mobile"></div>
+
+<div class="search-popup">
+<span class="search-back-drop"></span>
+<button class="close-search"><span class="fa fa-times"></span></button>
+<div class="search-inner">
+<form method="post" action="http://ary-themes.com/html/bold_touch/medicoz/blog-showcase.html">
+<div class="form-group">
+<input type="search" name="search-field" value="" placeholder="Search..." required="">
+<button type="submit"><i class="flaticon-magnifying-glass"></i></button>
+</div>
+</form>
+</div>
+</div>
+
+</header>
+</section>
+
+
+
+{% block body %}{% endblock body %}
+
+
+
+<footer class="main-footer">
+
+<div class="widgets-section" style="background-image: url(images/background/7.jpg);">
+<div class="auto-container">
+<div class="row">
+
+<div class="big-column col-xl-8 col-lg-12 col-md-12 col-sm-12">
+<div class="row">
+
+<div class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12">
+<div class="footer-widget about-widget">
+<div class="logo">
+<a href="index-2.html"><h2>Paediatricare</h2></a>
+</div>
+<div class="text">
+<p>Our Hospital has grown to provide a premium facility for its patients in the vicinity of Ulwe, Navi Mumbai. </p>
+<p>We are among the most qualified, dynamic, experienced doctors with over 15 years of experience medical healthcare and surgeories.</p>
+</div>
+<ul class="social-icon-three">
+<li><a href="https://www.facebook.com/ulwehospital"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+<li><a href="tel:+910000000000"><i class="fab fa-whatsapp"></i></a></li>
+</ul>
+</div>
+</div>
+
+<div class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
+<div class="footer-widget">
+<h2 class="widget-title">Departments</h2>
+<ul class="user-links">
+<li><a href="#">Pediatrics and Neonatology</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="big-column col-xl-4 col-lg-12 col-md-6 col-sm-6">
+<div class="row">
+
+<div class="footer-column col-lg-12 col-md-12 col-sm-12">
+
+<div class="footer-widget contact-widget">
+<h2 class="widget-title">Contact Us</h2>
+
+<div class="widget-content">
+<ul class="contact-list">
+<li>
+<span class="icon flaticon-placeholder"></span>
+<div class="text">Paediatricare Hospital,<br>Jaipur, Rajasthan (MH, India)</div>
+</li>
+<li>
+<span class="icon flaticon-call-1"></span>
+<div class="text">Talk to us</div>
+<a href="tel:+910000000000"><strong>+91 00000 00000</strong></a>
+</li>
+
+<li>
+<span class="icon flaticon-back-in-time"></span>
+ <div class="text">Open<br>
+<strong>24 x 7</strong></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-bottom">
+
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+<div class="auto-container">
+<div class="inner-container clearfix">
+<div class="footer-nav">
+
+</div>
+<div class="copyright-text">
+<p>Copyright © 2020 | <a href="#">Paediatricare Hospital</a></p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+<script src="{% static 'js/main-slider-script.js' %}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'js/jquery.modal.min.js' %}"></script>
+<script src="{% static 'js/mmenu.polyfills.js' %}"></script>
+<script src="{% static 'js/mmenu.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/mixitup.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/color-settings.js' %}"></script>
+
+<script>
+		$(document).ready(function(){
+		  // Add smooth scrolling to all links
+		  $("a").on('click', function(event) {
+
+			// Make sure this.hash has a value before overriding default behavior
+			if (this.hash !== "") {
+			  // Prevent default anchor click behavior
+			  event.preventDefault();
+
+			  // Store hash
+			  var hash = this.hash;
+
+			  // Using jQuery's animate() method to add smooth page scroll
+			  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			  $('html, body').animate({
+				scrollTop: $(hash).offset().top
+			  }, 1000, function(){
+
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				window.location.hash = hash;
+			  });
+			} // End if
+		  });
+		});
+		</script>
+
+</body>
+
+<!-- Mirrored from ulwehospital.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Jul 2022 11:58:56 GMT -->
+</html>

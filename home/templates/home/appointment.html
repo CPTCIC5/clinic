@@ -1,0 +1,59 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Appointment{% endblock title %}
+{% block body %}
+
+<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<div class="auto-container">
+<div class="title-outer">
+<h1>Appointment</h1>
+<ul class="page-breadcrumb">
+<li><a href="index-2.html">Home</a></li>
+<li>Appointment</li>
+</ul>
+</div>
+</div>
+</section>
+
+
+<section class="contact-section" id="contact">
+<div class="small-container">
+<div class="sec-title text-center">
+<span class="sub-title">We are available 24 x 7</span>
+<h2>Appointment</h2>
+<span class="divider"></span>
+</div>
+<form action="" method="post">
+    <div class="inputs">
+        <label">Name</label><br>
+        <input type="text" required>
+    </div>
+    <div class="inputs">
+        <label">Email</label><br>
+        <input type="email">
+    </div>
+    <div class="inputs">
+        <label">Phone No.</label><br>
+        <input type="tel" required>
+    </div>
+    <div class="inputs">
+        <label">Date</label><br>
+        <input type="date">
+        <label">Time</label><br>
+        <input type="time">
+    </div>
+    <div class="inputs">
+        <label">Problem</label><br>
+        <textarea name="problem" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div class="inputs">
+       <input type="button" class="btn" name="submit" value="Next">
+    </div>
+</form>
+
+
+<br>
+</div>
+</section>
+
+{% endblock body %}

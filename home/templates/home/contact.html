@@ -1,0 +1,56 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+
+<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<div class="auto-container">
+<div class="title-outer">
+<h1>Contact Us</h1>
+<ul class="page-breadcrumb">
+<li><a href="{% url 'index:index' %}">Home</a></li>
+<li>Contact</li>
+</ul>
+</div>
+</div>
+</section>
+
+
+<section class="contact-section" id="contact">
+<div class="small-container">
+<div class="sec-title text-center">
+<span class="sub-title">We are available 24 x 7</span>
+<h2>Contact Us</h2>
+<span class="divider"></span>
+</div>
+<form method="post">
+    {% csrf_token %}
+    <div class="inputs">
+        <label">Name</label><br>
+        <input type="text" name="name">
+    </div>
+    <div class="inputs">
+        <label">Email</label><br>
+        <input type="email" name="email">
+    </div>
+    <div class="inputs">
+        <label">Phone No.</label><br>
+        <input type="tel" name="phone_no">
+    </div>
+    <div class="inputs">
+        <label">Subject</label><br>
+        <input type="text" name="subject">
+    </div>
+    <div class="inputs">
+        <label">Message</label><br>
+        <textarea name="message" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div class="inputs">
+       <input type="submit" class="btn" name="submit" value="Submit">
+    </div>
+</form>
+<br>
+</div>
+</section>
+
+{% endblock body %}
