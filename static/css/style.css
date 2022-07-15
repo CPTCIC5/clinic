@@ -14439,7 +14439,7 @@ Sidebar Page Container
 }
 .card{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 10px;
   
 }
@@ -14487,3 +14487,25 @@ Sidebar Page Container
   font-size: 27px;
 }
 
+.img{
+  width: 100%;
+}
+.img div{
+  width: 100%;
+
+}
+.img div img{
+  object-fit: cover;
+  height: 300px;
+}
+@media screen and (max-width:1024px) {
+    .card{
+      grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:650px) {
+  .card{
+    grid-template-columns: 1fr;
+  }
+}

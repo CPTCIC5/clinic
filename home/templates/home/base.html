@@ -2,6 +2,7 @@
 <html lang="en">
 {% load static %}
 <head>
+		{% block css %}{% endblock css %}
 <meta charset="utf-8">
 <title>Paediatricare | {% block title %} {% endblock title %}</title>
 
@@ -28,25 +29,7 @@
 <section id="home">
 <header class="main-header header-style-four">
 
-<div class="header-top">
-<div class="auto-container">
-<div class="inner-container">
-<div class="top-left">
-<ul class="contact-list clearfix">
-<li><i class="flaticon-back-in-time"></i>Open 24 x 7 </li>
-<li><i class="flaticon-call-1"></i>+91 00000 00000</li>
-</ul>
-</div>
-<div class="top-right">
-<ul class="social-icon-one">
-<li><a href="https://www.facebook.com/"><span class="fab fa-facebook-f"></span></a></li>
-<li><a href="#"><span class="fab fa-youtube"></span></a></li>
-<li><a href="tel:+91000000000"><span class="fab fa-whatsapp"></span></a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+
 
 
 <div class="header-lower">
@@ -54,7 +37,7 @@
 
 <div class="main-box">
 <div class="logo-box">
-<div class="logo"><a href="index-2.html"><h1>Paediatricare</h1></a></div>
+<div class="logo"><a href="index-2.html"><h2>Paediatricare</h2></a></div>
 </div>
 
 <div class="nav-outer">
@@ -71,6 +54,7 @@
 
 <div class="outer-box">
 <a href="#appointment" class="theme-btn btn-style-one"><span class="btn-title">Appointment</span></a>
+<a href="login" class="theme-btn btn-style-one"><span class="btn-title">Login</span></a>
 </div>
 </div>
 </div>
@@ -81,7 +65,7 @@
 <div class="auto-container">
 <div class="main-box">
 <div class="logo-box">
-<div class="logo"><a href="index-2.html"><img src="images/logo.png" alt="" title=""></a></div>
+<div class="logo"><a href="index-2.html"><h2>Paediatricare</h2></a></div>
 </div>
 
 </div>
@@ -89,7 +73,7 @@
 </div>
 
 <div class="mobile-header">
-<div class="logo"><a href="index-2.html"><img src="images/logo.png" alt="" title=""></a></div>
+<div class="logo"><a href="index-2.html"><h2>Paediatricare</h2></a></div>
 
 <div class="nav-outer clearfix">
 <div class="outer-box">
@@ -116,9 +100,34 @@
 
 </header>
 </section>
+<br>
+<div class="header-top">
+	<div class="auto-container">
+	<div class="inner-container">
+	<div class="top-left">
+	<ul class="contact-list clearfix">
+	<li><i class="flaticon-back-in-time"></i>Open 24 x 7 </li>
+	<li><i class="flaticon-call-1"></i>+91 00000 00000</li>
+	</ul>
+	</div>
+	<div class="top-right">
+	<ul class="social-icon-one">
+	<li><a href="https://www.facebook.com/"><span class="fab fa-facebook-f"></span></a></li>
+	<li><a href="#"><span class="fab fa-youtube"></span></a></li>
+	<li><a href="tel:+91000000000"><span class="fab fa-whatsapp"></span></a></li>
+	</ul>
+	</div>
+	</div>
+	</div>
+	</div>
 
-
-
+	{% if messages %}
+	{% for msg in messages %}
+  <div class="messages" style="background:lime;">
+	<p style="padding:10px">{{msg}}</p>
+  </div>
+  {% endfor %}
+  {% endif %}
 {% block body %}{% endblock body %}
 
 
@@ -135,7 +144,7 @@
 <div class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12">
 <div class="footer-widget about-widget">
 <div class="logo">
-<a href="index-2.html"><h2>Paediatricare</h2></a>
+<a href="index-2.html"><h2 style="color: white;">Paediatricare</h2></a>
 </div>
 <div class="text">
 <p>Our Hospital has grown to provide a premium facility for its patients in the vicinity of Ulwe, Navi Mumbai. </p>
@@ -212,7 +221,7 @@
 </footer>
 
 </div>
-<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'js/jquery.js'%}"></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
 <script src="{% static 'plugins/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
 <script src="{% static 'plugins/revolution/js/jquery.themepunch.tools.min.js' %}"></script>

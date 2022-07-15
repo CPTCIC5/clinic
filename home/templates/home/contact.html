@@ -1,9 +1,39 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% block css %}
+<style>
+    .inputs{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+    .inputs input{
+        padding: 10px;
+        width: 100%;
+        background-color: rgb(237, 225, 225);
+        border: none;
+    }
+    .inputs textarea{
+        padding: 10px;
+        width: 100%;
+        background-color: rgb(237, 225, 225);
+    }
+    .inputs input[type='submit']{
+        background-color: darkblue;
+        color: white;
+        border: none;
+        border-radius: 10px;
+    }
+    .inputs input[type='submit']:hover{
+        background-color: rgb(48, 48, 199);
+    }
+</style>
+{% endblock css %}
 {% block title %}Contact{% endblock title %}
 {% block body %}
 
-<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<section class="page-title" style="background-image: url('../static/images/background/8.jpg');">
 <div class="auto-container">
 <div class="title-outer">
 <h1>Contact Us</h1>
