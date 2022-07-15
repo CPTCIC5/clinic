@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import *
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -40,14 +40,14 @@ def contact(request):
             'name':name,
             'email':email,
             'subject':subject,
+            'phone_no':phone_no,
             'message':message
-
             }
             message='''
             New message : {}
             from : {}
             '''.format(data['message'],data['email'])
-            send_mail(data['subject'],data[phone_no],message, '',['aryanjainak@gmail.com'] )
+            send_mail(data['subject'],data['phone_no'],message, '',['aryanjainak@gmail.com'] )
             messages.success(request,'THANKS FOR CONTACTING US! WE WILL REACH TO U ASAP')
             return HttpResponseRedirect(reverse('index:index'))
     return render(request,'home/contact.html')
@@ -58,4 +58,9 @@ def logout(request):
     return HttpResponseRedirect(reverse('home:index'))
 
 def blog(request):
-    return render(request,'home/blog.html')
+    post=Blog.objects.all()
+    return render(request,'home/blog.html',{'post':post})
+
+def paginated_blog(request,title):
+    queryset=get_object_or_404(Blog,title=title)
+    return render(request,'home/paginated_blog.html',{'queryset':queryset})

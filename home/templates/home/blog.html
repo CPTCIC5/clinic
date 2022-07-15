@@ -5,92 +5,25 @@
 
 <section class="blog">
     <div class="card">
+		{% for object in post %}
         <div class="card-body">
 			<div class="img">
 				<div>
-					<img src="{% static 'images/gallery/gallery_1.jpg' %}" alt="1">
+					{% if object.image %}
+					<img src="{{object.image.url}}" alt="1">
+					{% else %}
+					<img src="/Data/default-blog.jpeg" alt="1">
+					{% endif %}
 				</div>
 			</div><br>
-            <a href="paginated_blog.html"><h4 class="title">IU faculty update clinical recommendations for the care of Down syndrome</h4></a>
-            <p class="para">Three faculty within the department of pediatrics have updated the clinical recommendations of care for Down syndrome as a part of the American Academy of</p>
+            <a href="{% url 'index:paginated-blog' object.title %}"><h4 class="title">{{object.title}}</h4></a>
+            <p class="para">{{object.content|slice:"120"}}</p>
       
 		<div>
-				<div class="date">Apr 20, 2021</div>
+				<div class="date">{{object.posted_on}}</div>
 		</div>
 		</div>
-
-		<div class="card-body">
-			<div class="img">
-				<div>
-					<img src="{% static 'images/gallery/gallery_1.jpg' %}" alt="1">
-				</div>
-			</div><br>
-            <a href="paginated_blog.html"><h4 class="title">IU faculty update clinical recommendations for the care of Down syndrome</h4></a>
-            <p class="para">Three faculty within the department of pediatrics have updated the clinical recommendations of care for Down syndrome as a part of the American Academy of</p>
-      
-		<div>
-				<div class="date">Apr 20, 2021</div>
-		</div>
-		</div>
-
-		<div class="card-body">
-			<div class="img">
-				<div>
-					<img src="{% static 'images/gallery/gallery_1.jpg' %}" alt="1">
-				</div>
-			</div><br>
-            <a href="paginated_blog.html"><h4 class="title">IU faculty update clinical recommendations for the care of Down syndrome</h4></a>
-            <p class="para">Three faculty within the department of pediatrics have updated the clinical recommendations of care for Down syndrome as a part of the American Academy of</p>
-      
-		<div>
-				<div class="date">Apr 20, 2021</div>
-		</div>
-		</div>
-
-		<div class="card-body">
-			<div class="img">
-				<div>
-					<img src="{% static 'images/gallery/gallery_1.jpg' %}" alt="1">
-				</div>
-			</div><br>
-            <a href="paginated_blog.html"><h4 class="title">IU faculty update clinical recommendations for the care of Down syndrome</h4></a>
-            <p class="para">Three faculty within the department of pediatrics have updated the clinical recommendations of care for Down syndrome as a part of the American Academy of</p>
-      
-		<div>
-				<div class="date">Apr 20, 2021</div>
-		</div>
-		</div>
-
-		<div class="card-body">
-			<div class="img">
-				<div>
-					<img src="{% static 'images/gallery/gallery_3.jpg' %}" alt="1">
-				</div>
-			</div><br>
-            <a href="paginated_blog.html"><h4 class="title">IU faculty update clinical recommendations for the care of Down syndrome</h4></a>
-            <p class="para">Three faculty within the department of pediatrics have updated the clinical recommendations of care for Down syndrome as a part of the American Academy of</p>
-      
-		<div>
-				<div class="date">Apr 20, 2021</div>
-		</div>
-		</div>
-
-
-		<div class="card-body">
-			<div class="img">
-				<div>
-					<img src="{% static 'images/gallery/gallery_2.jpg' %}" alt="1">
-				</div>
-			</div><br>
-            <a href="paginated_blog.html"><h4 class="title">IU faculty update clinical recommendations for the care of Down syndrome</h4></a>
-            <p class="para">Three faculty within the department of pediatrics have updated the clinical recommendations of care for Down syndrome as a part of the American Academy of</p>
-      
-		<div>
-				<div class="date">Apr 20, 2021</div>
-		</div>
-		</div>
-
-		
+		{% endfor %}
     </div>
 </section>
 

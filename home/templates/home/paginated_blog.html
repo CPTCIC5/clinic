@@ -7,24 +7,18 @@
     
     <div class="main">
         <center>
-            <img src="blog.png" alt="">
-            <h2>IU faculty update clinical recommendations for the care of Down syndrome</h2>
-            <p class="date">Apr 20,2022</p>
-            <p class="by">Lewis First, MD, MS, Editor in Chief, Pediatrics</p>
-            <p><b> Article Type:</b> Pediatrics Blog</p>
+            {% if queryset.image %}
+            <img src="{{queryset.image.url}}" alt="">
+            {% else %}
+            <img src="/Data/default-blog.jpeg" alt="">
+            {% endif %}
+            <h2>{{queryset.title}}</h2>
+            <p class="date">{{queryset.posted_on}}</p>
         </center>
       
     </div>
     <div class="p">
-        <p class="paragraph">Children with medical complexity (CMC) have a high risk of medical errors and adverse events when hospitalized.1,2,3 How often are medical errors reported by families? Is it a safety or voluntary incident report filed by staff when they learn of a possible safety error from a family member? These are the questions that Mercer et al (10.1542/peds.2021-055098) describe in a study we are early releasing this month in Pediatrics. 
-
-            The authors share with us an analysis of a 12-month prospective cohort study involving 155 parents and 214 staff caring for CMC on one of 5 different units at one children’s hospital. Parents completed pre-discharge surveys asking about safety concerns experienced during hospitalization, whether they communicated these concerns, and if so, to whom. Staff were asked if families spoke to them about errors and what they did about them. While the results only involve one institution, the results of this study are concerning and worth thinking about. 
-            
-            Nearly half (43%, n=66) of parents reported at least 1 and up to 6 safety concerns during a hospitalization, most (69%) of which were due to medical errors. Only about 2 of every 3 concerns were shared with staff (e.g., bedside nurses).
-            
-            Parents with a higher education were more likely to report a safety concern or knew how to report them. Only about 1 of every 3 parents reported being taught how to report safety concerns, despite the fact that teaching families to report concerns is a national quality metric.
-            
-            The situation becomes even more concerning when staff admitted they do not always report the errors. If we want to ensure safety and equity in our, this study suggests we have much more work to do. The safest option to consider is to link to this study and reflect on whether families at your local hospital are taught how to share concerns about patient safety. This is a great topic for quality-improvement projects.</p>
+        <p class="paragraph">{{queryset.content}}
     </div>
 <div>
     <div class="features">
@@ -35,10 +29,4 @@
 </div>
     
 </section>
-
-
-
-
-
-
 {% endblock body %}

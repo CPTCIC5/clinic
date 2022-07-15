@@ -14,3 +14,15 @@ class Contact(models.Model):
 
     class Meta:
         ordering=['-time']
+
+class Blog(models.Model):
+    title=models.CharField(max_length=50)
+    image=models.ImageField(default='default-blog.jpeg',upload_to='blog-images')
+    content=models.TextField()
+    posted_on=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):  
+        return self.title
+    
+    class Meta:
+        ordering=['posted_on']
