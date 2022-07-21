@@ -137,6 +137,9 @@ STATICFILES_DIRS= [
     os.path.join(BASE_DIR,'static')
 ]
 
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = 'index:index'
+
 MEDIA_URL='/Data/'
 MEDIA_ROOT= os.path.join(BASE_DIR,'Data')
 # Default primary key field type

@@ -24,6 +24,7 @@ def register(request):
             else:
                 entry=User.objects.create_user(username=username,email=email,password=password)
                 entry.save()
+                messages.success(request,'Account Registered Succesfully!')
                 return HttpResponseRedirect(reverse('users:login'))
         else:
             messages.info(request,'Password and confirm password didn"t match')
@@ -32,4 +33,4 @@ def register(request):
 def logout(request):
     auth_logout(request)
     messages.success(request,'Logout Successful')
-    return HttpResponseRedirect(reverse('home:index'))
+    return HttpResponseRedirect(reverse('index:index'))

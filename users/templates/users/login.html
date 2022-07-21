@@ -30,16 +30,16 @@
     }
 </style>
 {% endblock css %}
-{% block title %}Appointment{% endblock title %}
+{% block title %}Login{% endblock title %}
 {% block body %}
 
-<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<section class="page-title" style="background-image: url('../static/images/background/8.jpg');">
 <div class="auto-container">
 <div class="title-outer">
-<h1>Appointment</h1>
+<h1>Login</h1>
 <ul class="page-breadcrumb">
-<li><a href="index-2.html">Home</a></li>
-<li>Appointment</li>
+<li><a href="{% url 'index:index' %}">Home</a></li>
+<li>Login</li>
 </ul>
 </div>
 </div>
@@ -49,38 +49,25 @@
 <section class="contact-section" id="contact">
 <div class="small-container">
 <div class="sec-title text-center">
-<span class="sub-title">We are available 24 x 7</span>
-<h2>Appointment</h2>
+<h2>Login</h2>
 <span class="divider"></span>
 </div>
 <form method="post">
     {% csrf_token %}
     <div class="inputs">
-        <label">Name</label><br>
-        <input type="text" name="name" required>
+        <label">Username</label><br>
+        <input type="text" name="username">
     </div>
     <div class="inputs">
-        <label">Email</label><br>
-        <input type="email" name="email">
+        <label">Password</label><br>
+        <input type="password" name="password">
     </div>
+    
     <div class="inputs">
-        <label">Phone No.</label><br>
-        <input type="tel"  name="phone" required>
-    </div>
-    <div class="inputs">
-        <label">DateTime</label><br>
-        <input type="datetime-local" name="appointment_at">
-    </div>
-    <div class="inputs">
-        <label">Problem</label><br>
-        <textarea name="problem"  cols="30" rows="10"></textarea>
-    </div>
-    <div class="inputs">
-       <input type="submit" class="btn" name="submit" value="Submit">
+       <input type="submit" class="btn" name="submit" value="Login">
     </div>
 </form>
-
-
+<p>Don't have an account?Click to <a href="{% url 'users:register' %}"> Register</a></p>
 <br>
 </div>
 </section>

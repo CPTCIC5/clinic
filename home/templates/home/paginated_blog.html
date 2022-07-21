@@ -1,5 +1,21 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% block css %}
+<style>
+.btn-comment{
+    background-color: darkblue; color:white;padding:6px;border-radius:6px;
+    margin: 10px;
+    position: absolute;
+    right:30px;
+}
+.commentsdis{
+    margin:20px;
+    padding: 10px;
+    border:1px solid;
+}
+</style>
+
+{% endblock css %}
 {% block title %}Blog{% endblock title %}
 {% block body %}
 
@@ -13,6 +29,7 @@
             <img src="/Data/default-blog.jpeg" alt="">
             {% endif %}
             <h2>{{queryset.title}}</h2>
+            <p  class="by">{{queryset.author}}</p>
             <p class="date">{{queryset.posted_on}}</p>
         </center>
       
@@ -21,6 +38,33 @@
         <p class="paragraph">{{queryset.content}}
     </div>
 <div>
+    <div class="comments">
+        <form method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+            <div class="commentbox">
+               <i class="fab fa-user"></i> <input type="text" class="com" name="message"  style="border-bottom: 1px solid;width:96%;padding:10px;margin-left:20px;margin-right:40px" placeholder="Hey {{user.username}} Add a Comment">
+                {% else %}
+                <i class="fab fa-user"></i> <input type="text" class="com"  name="message" style="border-bottom: 1px solid;width:96%;padding:10px;margin-left:20px;margin-right:40px" placeholder="Hey AnonymousUser login to comment" disabled>
+                {% endif %}
+            </div>
+            <div>
+                {% if user.is_authenticated %}
+                <input type="submit" value="Comment" class="btn-comment" style="display:none;">
+                {% endif %}
+            </div>
+        </form>
+        <div style="margin-top: 20px;">
+            
+            {% for x1 in queryset.blogcomment_set.all %}
+            <div class="commentsdis">
+                <h5 class="name">{{x1.commented_by}}</h5>
+                <p class="ycom">{{x1.message}}</p>
+                {{x1.comment_date}}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
     <div class="features">
         <p><b>Share:</b>  <li><a href="https://www.facebook.com"  target="_blank"><span class="fab fa-facebook"></span></a></li>
                  <li><a href="https://www.twitter.com"  target="_blank"><span class="fab fa-twitter"></span></a></li>
@@ -29,4 +73,18 @@
 </div>
     
 </section>
+<script>
+    let com=document.querySelector('.com')
+    let btn_com=document.querySelector('.btn-comment')
+
+    com.addEventListener('change',()=>{
+        if (com.value=='') {
+            btn_com.style.display='none'
+        }
+        else{
+            btn_com.style.display='block'
+        }
+    })
+
+</script>
 {% endblock body %}
