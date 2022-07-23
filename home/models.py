@@ -35,10 +35,11 @@ class Appointment(models.Model):
     phone=models.CharField(max_length=15)
     appointment_at=models.DateTimeField()
     problem=models.TextField()
+    meeting_joined=models.BooleanField(default=False)
     taken_on=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.taken_on.year}-{self.taken_on.month}-{self.taken_on.day}"
 
     class Meta:
         ordering=['-taken_on']
