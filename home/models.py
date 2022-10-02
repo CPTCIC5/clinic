@@ -33,7 +33,7 @@ class Appointment(models.Model):
     name=models.CharField(max_length=50)
     email=models.EmailField()
     phone=models.CharField(max_length=15)
-    appointment_at=models.DateTimeField()
+    appointment_at=models.DateTimeField(unique=True)
     problem=models.TextField()
     meeting_joined=models.BooleanField(default=False)
     taken_on=models.DateTimeField(auto_now_add=True)

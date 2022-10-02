@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'clinic',
         'USER': 'postgres',
         'PASSWORD': 'Iamreal123',
-        'HOST': 'localhost',
+        'HOST': 'database-1.cuhhc2okmgu8.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
 }
 }

@@ -3,10 +3,9 @@ from .models import Blog, Contact,Appointment,BlogComment
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
+#from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from ratelimit.decorators import ratelimit
-
 
 
 def index(request):
@@ -81,12 +80,16 @@ def appointment(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
-        print(name,email,phone)
+        #print(name,email,phone)
         appointment_at = request.POST.get('appointment_at')
         problem = request.POST.get('problem')
-        if len(name)>50:
+        if Appointment.objects.filter(appointment_at=appointment_at).exists():
+            messages.error('Dr. is busy at the moment,pls choose another timings')
+            return HttpResponseRedirect(reverse('index:appointment'))
+        elif len(name)>50:
             messages.error('name too big')
             return HttpResponseRedirect(reverse('index:appointment'))
+        
         elif len(phone)>15:
             messages.error('Phone no. too big')
             return HttpResponseRedirect(reverse('index:appointment'))
