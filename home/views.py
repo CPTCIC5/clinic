@@ -5,7 +5,6 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 #from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
-from ratelimit.decorators import ratelimit
 
 
 def index(request):
@@ -15,7 +14,6 @@ def about(request):
     return render(request,'home/about.html')
 
 
-@ratelimit(key='ip',rate='10/d',block=True,method=['POST'])
 def contact(request):
     if request.method == 'POST':
         name=request.POST.get('name')
@@ -57,7 +55,6 @@ def blog(request):
     return render(request,'home/blog.html',{'post':post})
 
 
-@ratelimit(key='ip',rate='10/d',block=True,method=['POST'])
 def paginated_blog(request,title):
     queryset=get_object_or_404(Blog,title=title)
     if request.method == 'POST':
@@ -74,7 +71,6 @@ def paginated_blog(request,title):
     return render(request,'home/paginated_blog.html',{'queryset':queryset})
 
 
-@ratelimit(key='ip',rate='5/d',block=True,method=['POST'])
 def appointment(request):
     if request.method == 'POST':
         name = request.POST.get('name')
